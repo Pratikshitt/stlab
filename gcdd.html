@@ -1,0 +1,43 @@
+
+<html lang="en">
+<head>
+    <!--<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button onclick="displayGCD()">Submit</button>
+    <!-- <input type="reset" value="Reset"> -->
+    <!-- <button onclick="document.getElementById('num1').value = '',document.getElementById('num2').value = '',document.getElementById('demo') = ''">Clear</button> -->
+   
+    <p id="demo"></p>
+    <script>
+        function displayGCD(){
+        var y=Math.abs(document.getElementById("num1").value);
+        var x=Math.abs(document.getElementById("num2").value);
+        if(y<=0 || x<=0)
+        {
+             alert("Invalid input");
+        }
+        else
+        {
+            var t;
+            if(x>y){
+                t=y;
+                y=x;
+                x=t;
+            }
+            while(y) {
+            t = y;
+            y = x % y;
+            x = t; 
+        }
+        document.getElementById("demo").innerHTML=("GCD is "+x);}
+        }
+    </script>
+</body>
+</html>
